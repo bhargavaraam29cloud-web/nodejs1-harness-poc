@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs1-service
+  namespace: nodejs1-app
+  labels:
+    app: nodejs1-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: nodejs1-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
